@@ -177,8 +177,7 @@ with tabs[0]:
         elif not SHARED_READY or not st.session_state.room_unlocked:
             st.info("Connect Supabase and unlock the room to send messages between phones.")
         elif send_message(kind, body, sender or "Guest"):
-            st.success("Left in your little room. ♡")
-            st.session_state.new_message = ""
+            st.success("Left in your little room. ♡"
             st.rerun()
     st.markdown("---")
     st.markdown("#### Recent messages")
