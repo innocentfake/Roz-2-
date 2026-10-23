@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: for-roz-2
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: ROOM_PASSWORD_HASH
+        sync: false
